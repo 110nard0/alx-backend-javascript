@@ -1,2 +1,2 @@
 # Backend with JavaScript
-This is where my JavaScript task solutions will live
+This is where solutions to my JavaScript Specialization tasks will live
