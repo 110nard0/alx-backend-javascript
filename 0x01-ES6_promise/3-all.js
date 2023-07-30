@@ -13,16 +13,3 @@ export default function handleProfileSignup() {
     })
     .catch(() => console.log('Signup system offline'));
 }
-
-/*
-export default async function handleProfileSignup() {
-  try {
-    const photo = await uploadPhoto();
-    const user = await createUser();
-
-    console.log(photo.body, user.firstName, user.lastName);
-  } catch (e) {
-    console.log('Signup system offline');
-  }
-}
-*/
