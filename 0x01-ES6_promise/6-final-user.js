@@ -11,7 +11,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       promises.forEach((promise) => {
         result.push({
           status: promise.status,
-          value: promise.status === 'fulfilled' ? promise.value : promise.reason,
+          value: promise.status === 'fulfilled' ? promise.value : `${promise.reason}`,
         });
       });
       return result;
