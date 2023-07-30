@@ -15,7 +15,6 @@ export default function handleProfileSignup() {
 }
 
 /*
-// Works but does NOT return a promise
 export default async function handleProfileSignup() {
   try {
     const photo = await uploadPhoto();
