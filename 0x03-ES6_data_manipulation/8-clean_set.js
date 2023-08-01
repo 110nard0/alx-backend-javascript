@@ -1,5 +1,5 @@
 export default function cleanSet(set, startString) {
-  if (startString === '' || startString === undefined) return '';
+  if (startString.length === 0 || startString === undefined) return '';
 
   return [...set]
     .filter((string) => (string !== undefined ? string.startsWith(startString) : ''))
