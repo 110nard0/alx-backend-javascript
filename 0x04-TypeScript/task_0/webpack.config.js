@@ -23,6 +23,10 @@ module.exports = {
   devServer: {
     contentBase: "./dist"
   },
+  devServer: {
+    static: path.resolve(__dirname, 'dist'),
+    open: true,
+  },
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
     new CleanWebpackPlugin(),
