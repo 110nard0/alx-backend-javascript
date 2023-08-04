@@ -33,8 +33,6 @@ const executeWork = (employee) => {
 };
 // Create teachClass function
 const teachClass = (todayClass) => {
-    const subject = todayClass === "Math" ? "Teaching Math" : "Teaching History";
+    const subject = todayClass === 'Math' ? "Teaching Math" : "Teaching History";
     return subject;
 };
-console.log(teachClass('Math'));
-console.log(teachClass('History'));

@@ -51,10 +51,10 @@ const executeWork = (employee: Director | Teacher): void => {
 }
 
 // Create string literal type
-type Subjects = 'Math' | 'History';
+type Subjects = "Math" | "History";
 
 // Create teachClass function
 const teachClass = (todayClass: Subjects): string => {
-  const subject = todayClass === "Math" ? "Teaching Math" : "Teaching History";
+  const subject = todayClass === 'Math' ? "Teaching Math" : "Teaching History";
   return subject;
 }
