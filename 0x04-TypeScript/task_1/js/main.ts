@@ -26,8 +26,8 @@ interface StudentConstructor {
 interface StudentInterface {
   firstName: string;
   lastName: string;
-  workOnHomework(): string;
   displayName(): string;
+  workOnHomework(): string;
 }
 
 const StudentClass: StudentConstructor = class StudentClass implements StudentInterface {
@@ -39,11 +39,11 @@ const StudentClass: StudentConstructor = class StudentClass implements StudentIn
     this.lastName = lastName;
   }
 
-  workOnHomework() {
-    return "Currently working";
-  }
-
   displayName() {
     return this.firstName;
+  }
+
+  workOnHomework() {
+    return "Currently working";
   }
 }
