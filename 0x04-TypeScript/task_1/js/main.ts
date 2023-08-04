@@ -24,6 +24,8 @@ interface StudentConstructor {
 }
 
 interface StudentInterface {
+  firstName: string;
+  lastName: string;
   workOnHomework(): string;
   displayName(): string;
 }
