@@ -8,4 +8,5 @@ interface RowElement {
   age?: number;
 }
 
+// Export row type alias and interface
 export { RowID, RowElement };
