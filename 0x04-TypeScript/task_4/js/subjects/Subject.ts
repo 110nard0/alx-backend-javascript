@@ -1,3 +1,4 @@
+// Create Subject class in Subjects namespace
 namespace Subjects {
   export class Subject {
     teacher: Teacher;
