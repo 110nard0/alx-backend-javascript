@@ -1,6 +1,3 @@
-/* eslint-disable */
-function displayMessage(data) {
-    console.log(data);
-  }
-  
-  module.exports = displayMessage;
+module.exports = function displayMessage(string) {
+    process.stdout.write(string + '\n')
+}
