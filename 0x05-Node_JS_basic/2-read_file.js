@@ -3,7 +3,7 @@ const fs = require('fs');
 
 module.exports = function countStudents(filePath) {
   try {
-    const content = fs.readFileSync(filePath, encoding = 'utf-8');
+    const content = fs.readFileSync(filePath, 'utf-8');
     let lines = content.split('\n');
     lines = lines.slice(1).slice(0, -1);
     const len = lines.length;
@@ -24,7 +24,7 @@ module.exports = function countStudents(filePath) {
     console.log(`Number of students: ${len}`);
 
     for (const key in fieldset) {
-      nameList = fieldset[key];
+      const nameList = fieldset[key];
       console.log(`Number of students in ${key}: ${nameList.length}. List: ${nameList.join(', ')}`);
     }
   } catch (e) {
