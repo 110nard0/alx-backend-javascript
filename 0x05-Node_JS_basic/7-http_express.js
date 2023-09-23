@@ -1,4 +1,3 @@
-/* eslint-disable  */
 const express = require('express');
 const { readFile } = require('fs');
 
@@ -13,10 +12,10 @@ const countStudents = async (filePath) => {
         reject(new Error('Cannot load the database'));
       } else {
           let lines = data.split('\n');
-          lines = lines.slice(1).filter(line => line.length > 1);
+          lines = lines.slice(1).filter((line) => line.length > 1);
           const len = lines.length;
           const fieldset = {};
-          let output = 'This is the list of our students\n';
+          let output = '';
 
           for (const line of lines) {
             const content = line.split(',');
@@ -49,12 +48,12 @@ app.get('/', (req, res) => {
 app.get('/students', (req, res) => {
   countStudents(fileName)
     .then((output) => {
-      res.send(output.trim());
+      res.send(['This is the list of our students', output.trim()].join('\n'));
     })
     .catch(() => {
       res.statusCode = 404;
-      res.send('Cannot load the database');
-    })
+      res.send('This is the list of our students\nCannot load the database');
+    });
 });
 
 app.listen(port, () => {
