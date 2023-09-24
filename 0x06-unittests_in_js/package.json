@@ -4,7 +4,9 @@
   "description": "unit testing in js",
   "main": "index.js",
   "scripts": {
-    "test": "npx mocha"
+    "test": "npx mocha",
+    "lint": "./node_modules/.bin/eslint",
+    "check-lint": "npm run lint [0-9]*.js"
   },
   "keywords": [],
   "author": "",
