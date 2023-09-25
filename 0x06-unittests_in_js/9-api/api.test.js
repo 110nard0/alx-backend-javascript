@@ -24,25 +24,29 @@ describe('Index page', () => {
 
 describe("Cart page", function() {
   it('should have correct status code when id is a number', () => {
-    request.get(`${url}/cart/12`, (error, response, body) => {
+    const url = 'http://localhost:7865/cart/12';
+    request.get(url, (error, response, body) => {
       expect(response.statusCode).to.equal(200);
     });
   });
 
   it('should have correct status code when id is not a number', () => {
-    request.get(`${url}/cart/hello`, (error, response, body) => {
+    const url = 'http://localhost:7865/cart/hello';
+    request.get(url, (error, response, body) => {
       expect(response.statusCode).to.equal(404);
     });
   });
 
   it('should have correct response message when id is a number', () => {
-    request.get(`${url}/cart/12`, (error, response, body) => {
+    const url = 'http://localhost:7865/cart/12';
+    request.get(url, (error, response, body) => {
       expect(body).to.equal('Payment methods for cart 12');
     });
   });
 
   it('should  have correct result when id is not a number', () => {
-    request.get(`${url}/cart/hello`, (error, response, body) => {
+    const url = 'http://localhost:7865/cart/hello';
+    request.get(url, (error, response, body) => {
       expect(body).to.include('Cannot GET /cart/hello');
     });
   });
