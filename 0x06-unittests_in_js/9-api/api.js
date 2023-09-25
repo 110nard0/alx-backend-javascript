@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 
 const app = express();
 const port = 7865;
@@ -7,12 +8,14 @@ app.get('/', (req, res) => {
   res.send('Welcome to the payment system');
 });
 
-app.get('/cart/:id(\\d+)', (req, res) => {
-  res.send(`Payment methods for cart ${req.params.id}`);
+app.get(/^\/cart\/(\d+)$/, (req, res) => {
+  const id = req.params.id;
+  res.send(`Payment methods for cart ${id}`);
 });
 
-app.listen(port, () => {
-  console.log(`API available on localhost port ${port}`);
+
+app.listen(port, 'localhost', () => {
+  console.log(`API avalilable on localhost port ${port}`);
 });
 
 module.exports = app;
