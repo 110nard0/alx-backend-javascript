@@ -1,15 +1,15 @@
-/* eslint-disable  */
-const { readFile } = require('fs');
+import { readFile } from 'fs';
+// import fs from 'fs';
 
-module.exports = async function readDatabase(filePath) {
+const readDatabase = (filePath) => {
   return new Promise((resolve, reject) => {
     readFile(filePath, 'utf-8', (err, data) => {
+      console.log(filePath)
       if (err) {
         reject(new Error('Cannot load the database'));
       } else {
-        let lines = data.split('\n');
+        let lines = data.toString().split('\n');
         lines = lines.slice(1).filter((line) => line.length > 1);
-        const len = lines.length;
         const fieldset = {};
 
         for (const line of lines) {
@@ -26,3 +26,5 @@ module.exports = async function readDatabase(filePath) {
     });
   });
 };
+
+export default readDatabase;
