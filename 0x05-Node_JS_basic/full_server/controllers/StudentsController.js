@@ -1,3 +1,4 @@
+/* eslint-disable  */
 import readDatabase from '../utils';
 
 const dbName = process.argv[2].toString();
