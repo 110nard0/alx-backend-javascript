@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.get(/^\/cart\/(\d+)$/, (req, res) => {
-  const id = req.params.id;
+  const id = req.params[0];
   res.send(`Payment methods for cart ${id}`);
 });
 
