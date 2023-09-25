@@ -1,10 +1,8 @@
-import { readFile } from 'fs';
-// import fs from 'fs';
+import fs from 'fs';
 
 const readDatabase = (filePath) => {
-  return new Promise((resolve, reject) => {
-    readFile(filePath, 'utf-8', (err, data) => {
-      console.log(filePath)
+  const filePromise = new Promise((resolve, reject) => {
+    fs.readFile(filePath, 'utf-8', (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
       } else {
@@ -25,6 +23,7 @@ const readDatabase = (filePath) => {
       }
     });
   });
+  return filePromise;
 };
 
 export default readDatabase;
