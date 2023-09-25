@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const request = require('request');
 const url = 'http://localhost:7865';
 
-describe('make api call to index page', () => {
+describe('Index page', () => {
   it('should have status code of 200 from index page', () => {
     request.get(url, (error, response, body) => {
       expect(response.statusCode).to.equal(200);
@@ -20,7 +20,9 @@ describe('make api call to index page', () => {
       expect(response.headers['content-length']).to.equal('29');
     });
   });
+});
 
+describe("Cart page", function() {
   it('should have correct status code when id is a number', () => {
     request.get(`${url}/cart/12`, (error, response, body) => {
       expect(response.statusCode).to.equal(200);
